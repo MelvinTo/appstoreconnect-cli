@@ -67,6 +67,15 @@ struct ListBuildsCommand: CommonParsableCommand {
     )
     var filterBetaReviewStates: [String] = []
 
+    @Option(
+        parsing: .upToNextOption,
+        help: ArgumentHelp(
+            "Filter by beta groups that this build is associated with",
+            valueName: "beta-groups"
+        )
+    )
+    var filterBetaGroups: [String] = []
+
     @Option(help: "Limit the number of individualTesters & betaBuildLocalizations")
     var limit: Int?
 
@@ -80,6 +89,7 @@ struct ListBuildsCommand: CommonParsableCommand {
             filterBuildNumbers: filterBuildNumbers,
             filterProcessingStates: filterProcessingStates,
             filterBetaReviewStates: filterBetaReviewStates,
+            filterBetaGroups: filterBetaGroups,
             limit: limit
         )
 

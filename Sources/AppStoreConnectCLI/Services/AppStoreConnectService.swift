@@ -584,6 +584,7 @@ class AppStoreConnectService {
         filterBuildNumbers: [String],
         filterProcessingStates: [ListBuilds.Filter.ProcessingState],
         filterBetaReviewStates: [String],
+        filterBetaGroups: [String],
         limit: Int?
     ) throws -> [Model.Build] {
 
@@ -602,6 +603,7 @@ class AppStoreConnectService {
                 filterBuildNumbers: filterBuildNumbers,
                 filterProcessingStates: filterProcessingStates,
                 filterBetaReviewStates: filterBetaReviewStates,
+                filterBetaGroups: filterBetaGroups,
                 limit: limit
             )
         )

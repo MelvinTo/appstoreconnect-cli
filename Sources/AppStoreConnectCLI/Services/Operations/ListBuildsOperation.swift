@@ -13,6 +13,7 @@ struct ListBuildsOperation: APIOperation {
         let filterBuildNumbers: [String]
         let filterProcessingStates: [ListBuilds.Filter.ProcessingState]
         let filterBetaReviewStates: [String]
+        let filterBetaGroups: [String]
         let limit: Int?
     }
 
@@ -28,6 +29,7 @@ struct ListBuildsOperation: APIOperation {
         filters += options.filterExpired.isEmpty ? [] : [.expired(options.filterExpired)]
         filters += options.filterProcessingStates.isEmpty ? [] : [.processingState(options.filterProcessingStates)]
         filters += options.filterBetaReviewStates.isEmpty ? [] :  [.betaAppReviewSubmissionBetaReviewState(options.filterBetaReviewStates)]
+        filters += options.filterBetaGroups.isEmpty ? [] :  [.buildBetaGroups(options.filterBetaGroups)]
 
         return filters
     }
@@ -48,7 +50,7 @@ struct ListBuildsOperation: APIOperation {
         let filters = self.filters
         let include: [ListBuilds.Include] = [.app, .betaAppReviewSubmission, .buildBetaDetail, .preReleaseVersion]
         let limit = self.limit
-        let sort: [ListBuilds.Sort] = [.uploadedDateAscending]
+        let sort: [ListBuilds.Sort] = [.uploadedDateDescending]
 
         return requestor
             .requestAllPages { .builds(filter: filters, include: include, limit: limit, sort: sort, next: $0) }

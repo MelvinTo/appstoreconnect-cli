@@ -24,8 +24,8 @@ let package = Package(
             exact: "1.1.3"
         ),
         .package(
-            url: "https://github.com/AvdLee/appstoreconnect-swift-sdk.git",
-            from: "1.7.0"
+            url: "https://github.com/melvinto/appstoreconnect-swift-sdk.git",
+            from: "1.7.1"
         ),
         .package(
             url: "https://github.com/jpsim/Yams.git",

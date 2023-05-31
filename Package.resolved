@@ -3,10 +3,10 @@
     {
       "identity" : "appstoreconnect-swift-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/AvdLee/appstoreconnect-swift-sdk.git",
+      "location" : "https://github.com/melvinto/appstoreconnect-swift-sdk.git",
       "state" : {
-        "revision" : "6961347904eaad966f6eedc3b605f685dac429f8",
-        "version" : "1.7.0"
+        "revision" : "db3a9ddf6040a9802cd9d4d9d153825719e9aa30",
+        "version" : "1.7.1"
       }
     },
     {
